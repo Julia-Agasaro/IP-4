@@ -36,20 +36,65 @@
         <h1 class="text-center text-white" id="menu">Menu</h1>
         <div class="pizza-menu row text-center">
             <figure class="col-sm-4">
-                <img src="images/81mAxt2TroL._SX425_.jpg" alt="small-pizza" class="wiggle">
+                <img src="images/81mAxt2TroL._SX425_.jpg "width="30%" height="30%" alt="small-pizza" class="wiggle">
                 <figcaption class="text-black">small<br>4,000 Rwf</figcaption>
             </figure>
             <figure class="col-sm-4">
-                <img src="images/DominosPizza1560844410.png" alt="medium-pizza" class="wiggle">
+                <img src="images/81mAxt2TroL._SX425_.jpg " width="50%" height="50%"alt="medium-pizza" class="wiggle">
                 <figcaption class="text-black">Medium<br>6,000Rwf</figcaption>
             </figure>
             <figure class="col-sm-4">
-                <img src="images/hm-btm-slider-pep-pizza-201805.png" alt="large-pizza" class="wiggle">
+                <img src="images/81mAxt2TroL._SX425_.jpg " width="70%" height="70%" alt="large-pizza" class="wiggle">
                 <figcaption class="text-black">Large<br>9,000Rwf</figcaption>
             </figure>
         </div>
     </div>
 </div>  
+<div class="orders" id="order">
+    <h1 class="text-center" id="order-pizza">Order Pizza</h1>
+    <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 order-overlay text-center">
+            <form class="col-sm-6 offset-sm-3 text-center">
+                <label>Choose your size preference:</label>
+                <select class="custom-select custom-select-md mb-3" id="size" required>
+                    <option value="small">small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <label for="crust">Choose your Crust:</label>
+                <select class="custom-select custom-select-md mb-3" id="crust" required>
+                    <option value="thin">Crispy @ 600 rwf</option>
+                    <option value="thick">Stuffed @ 900 rwf</option>
+                    <option value="flatbread">Gluten-free @ 1,200 rwf</option>
+                    
+                </select>
+                <label>Select Your favourite Toppings</label>
+                <select class="custom-select custom-select-md mb-3" id="toppings" required>
+                    <option value="tomato">Tomato @ sh. 80</option>
+                    <option value="onions">Onions @ sh. 80</option>
+                    <option value="mushroom">Mushroom @ sh. 80</option>
+                    <option value="greenpepper">Green Pepper @ sh. 80</option>
+                    <option value=""></option>
+                    <option value="olives">Olives @ sh. 120</option>
+                    <option value="pineapple">Pineapple @ sh. 120</option>
+                    <option value="sweetcorn">Sweet Corn @ sh. 120</option>
+                    <option value="macon">Macon @ sh. 120</option>
+                    <option value="mince">Mince @ sh. 120</option>
+                    <option value=""></option>
+                    <option value="beef">Beef Peperoni @ sh. 170</option>
+                    <option value="chicken">Periperi Chicken @ sh. 170</option>
+                </select>
+                <label for="number">Number of Pizza's</label>
+                <input type="number" class="form-control" id="number" placeholder="Number of pizzas" min="1" required>
+
+
+            </form>
+            <a href="#summary">
+                <button type="submit" class="btn btn-success checkout" id="checkout">
+                    Checkout
+                </button>
+            </a>
     <section class="first">
         <div id="clicktoorders">
                 <h2><strong>Place In Your Orders</strong></h2>
