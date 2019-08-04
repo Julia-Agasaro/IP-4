@@ -10,17 +10,22 @@
 </head>
 <body>
     <header>
+        <section class="container">
+            <div class="nav">
+            <a href="#" class="btn-btn-full"> Click to order</a>  
+            </div>
+      </section>
         <div class="logo">
            <img src="images/thepizzabox-1.png">
         </div>
       <div class="main-content-header">
         <h1 style="font-size:50px">Welcome To<span>The Pizza Box </span> <br>
                                       House Of pizza</h1>
-        <a href="#" class="btn-btn-full"> Click to order</a>
+      
       </div>
     </header>   
-    <section class="second">
-        <div id="orders">
+    <section class="first">
+        <div id="clicktoorders">
                 <h2><strong>Place In Your Orders</strong></h2>
         </div>
         <form>
@@ -58,6 +63,18 @@
 
                             </select>
                           </div>
+                          <div class class = "form-group">
+                            <label for="pwd">Number of Pizza:</label>
+                            <input type="number" class="form-control" id="num" min="1" value="1">
+                          </div>
+                          <!-- <div class="form-group">
+                            <button type="button" class="btn-btn-secondary">Delivery</button>
+                            <button type="button" class="btn-btn-secondary">At The Restaurant</button>
+                          </div> -->
+                          <span class="btn btn-primary" id="add-order">Make another Order</span>
+
+                          <button type="submit" class="btn">Make another Order</button>
+                        </form>
               </form>
 
  
