@@ -76,6 +76,7 @@ function price(size,crust,toppings){
                 toppingsPrice = 200;
             }
         }
+    }
         else if(crust==="stuffed"){
             crustPrice=900;
             if (toppings==="pepperoni" || toppings==="mushrooms"){
@@ -257,41 +258,39 @@ function price(size,crust,toppings){
             }
         }
     }
-    var pricing = (sizePrice + toppingsPrice + crustPrice) * amount;
-    console.log("pricing: "+pricing);
-    totalPrice.push(pricing);
+    var prices = (sizePrice + toppingsPrice + crustPrice) * number;
+    console.log("prices: "+pricing);
+    totalPrice.push(prices);
     console.log(totalPrice);
     for(var i=0;i<totalPrice.length;i++){
         sumTotal+=totalPrice[i];
         console.log("sum "+sumTotal);
     }
-    return (sizePrice + toppingsPrice + crustPrice) * amount;
+    return (sizePrice + toppingsPrice + crustPrice) * number;
 }
 
-// UI LOGIC CODE
-// var pizzaSize,pizzaCrust,pizzaToppings,comments,amount;
-// $(document).ready(function(){
-//     $("#order").click(function(event){
-//         event.preventDefault();
-//         alert("Please enter a new order, if this was your last... select deliver or reservation to proceed to checkout");
-//         pizzaSize = $("#size").val();
-//         console.log(pizzaSize);
-//         pizzaCrust = $("#crust").val();
-//         console.log(pizzaCrust);
-//         pizzaToppings = $("#toppings").val();
-//         console.log(pizzaToppings);
-//         comments = $("#comment").val();
-//         console.log(comments);
-//         amount = $("#num").val();
-//         console.log(amount);
+// User input Logic
+var pizzaSize,pizzaCrust,pizzaToppings,number;
+$(document).ready(function(){
+    $("#checkout").click(function(event){
+        event.preventDefault();
+        pizzaSize = $("#size").val();
+        console.log(pizzaSize);
+        pizzaCrust = $("#crust").val();
+        console.log(pizzaCrust);
+        pizzaToppings = $("#toppings").val();
+        console.log(pizzaToppings);
+        number = $("#number").val();
+        console.log(number);
         
-//         var newOrder = new Orders(pizzaSize,pizzaCrust,pizzaToppings,amount,comments);
-//         // console.log(newOrder);
+        var newOrder = new Orders(pizzaSize,pizzaCrust,pizzaToppings,number);
+        console.log(newOrder);
 
-//         $("ol#ordered").append('<li><span>'+ newOrder.fullOrder() +'</span></li>');
-//         $("ol#prices").append('<li><span>'+ "cost: " + price(pizzaSize,pizzaCrust,pizzaToppings) + "$" +'</span></li>');
-//         resetInputs();
-//     });
+        // $("ol#ordered").append('<li><span>'+ newOrder.fullOrder() +'</span></li>');
+        // $("ol#prices").append('<li><span>'+ "cost: " + price(pizzaSize,pizzaCrust,pizzaToppings) + "Rwf" +'</span></li>');
+        // resetInputs();
+    });
+});
 //     $("#checkout").click(function(){
 //         $(".hidden").show();
 //         $("h4#total").append(" "+ sumTotal + "$.");
