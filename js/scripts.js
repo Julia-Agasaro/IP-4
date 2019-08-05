@@ -225,6 +225,7 @@ function price(size,crust,toppings){
             crustPrice=900;
             if (toppings==="pepperoni" || toppings==="mushrooms"){
                 toppingsPrice = 200;
+            
             }
             else if(toppings==="onions"|| toppings==="greenpepper"){
                 toppingsPrice = 200;
@@ -258,15 +259,15 @@ function price(size,crust,toppings){
             }
         }
     }
-    var prices = (sizePrice + toppingsPrice + crustPrice) * number;
-    console.log("prices: "+pricing);
+    var prices = (pizzaSize + pizzaCrust + pizzaToppings) * number;
+    console.log("prices: "+prices);
     totalPrice.push(prices);
     console.log(totalPrice);
     for(var i=0;i<totalPrice.length;i++){
         sumTotal+=totalPrice[i];
         console.log("sum "+sumTotal);
     }
-    return (sizePrice + toppingsPrice + crustPrice) * number;
+    return (pizzaSize + pizzaCrust + pizzaToppings) * number;
 }
 
 // User input Logic
@@ -282,19 +283,22 @@ $(document).ready(function(){
         console.log(pizzaToppings);
         number = $("#number").val();
         console.log(number);
-        
         var newOrder = new Orders(pizzaSize,pizzaCrust,pizzaToppings,number);
         console.log(newOrder);
+        var prices = (pizzaSize + pizzaToppings + pizzaCrust) * number;
+        console.log(parseInt("prices: "+prices));
+        totalPrice.push(prices);
+        console.log(parseInt(totalPrice));
+    
 
-        // $("ol#ordered").append('<li><span>'+ newOrder.fullOrder() +'</span></li>');
-        // $("ol#prices").append('<li><span>'+ "cost: " + price(pizzaSize,pizzaCrust,pizzaToppings) + "Rwf" +'</span></li>');
-        // resetInputs();
+        $("#delivery").append('<li><span>'+ newOrder.fullOrder() +'</span></li>');
+        resetInputs();
     });
 });
-//     $("#checkout").click(function(){
-//         $(".hidden").show();
-//         $("h4#total").append(" "+ sumTotal + "$.");
-//     });
+    // $("#checkout").click(function(){
+    //     $(".hidden").show();
+    //     $("h4#total").append(" "+ sumTotal + "$.");
+    // });
 //     $("#chooseDeliver").click(function(event){
 //         event.preventDefault();
 //         alert("Delivery charge is 15$ charged after reception of pizza.")
