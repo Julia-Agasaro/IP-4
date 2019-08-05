@@ -294,30 +294,4 @@ $(document).ready(function(){
         resetInputs();
     });
 });
-    // $("#checkout").click(function(){
-    //     $(".hidden").show();
-    //     $("h4#total").append(" "+ sumTotal + "$.");
-    // });
-//     $("#chooseDeliver").click(function(event){
-//         event.preventDefault();
-//         alert("Delivery charge is 15$ charged after reception of pizza.")
-//         $("#deliver").show();
-//         $("#chooseReservation").hide();
-//     });
-//     $("#chooseReservation").click(function(event){
-//         event.preventDefault();
-//         alert("5$ Reservation charges will be added to your bill at the restaurant.")
-//         $("#reserve").show();
-//         $("#chooseDeliver").hide();
-//     });
-//     $("#submitDeliver").click(function(event){
-//         event.preventDefault();
-//         alert("your order will be delivered to your location");
-//         $("#checkout").show();
-//     });
-//     $("#submitRes").click(function(event){
-//         event.preventDefault();
-//         alert("your table has been reserved.");
-//         $("#checkout").show();
-//     });
-// });
+    
