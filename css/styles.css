@@ -83,3 +83,22 @@ right:400%;
         letter-spacing: 2px;
          border: 10px solid black;
 }
+  ul li {
+    display: inline;
+        margin-right: 20px;
+        margin-left: 12px;
+}
+ul li a{
+    padding:4px 6px;
+    overflow:hidden;
+    text-align:center;
+    font-family:"roboto", sans serif;
+    border:1px solid transparent;
+    color:Black;
+    transition:0.6s ease;
+    text-decoration-line: none;
+  }
+  ul li a:hover{
+    background-color:black;
+    color:white;
+  }
