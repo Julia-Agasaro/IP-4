@@ -35,7 +35,7 @@ function resetInputs(){
     $("#num").val("");
 }
 Orders.prototype.fullOrder = function (){
-    return this.size + "," + this.crust + "," + this.topping + "," + this.number ;
+    return this.size + "," + this.crust + "," + this.toppings + "," + this.number ;
 }
 var sizePrice,crustPrice,toppingsPrice;
 var totalPrice = [];
@@ -187,7 +187,7 @@ function price(size,crust,toppings){
         }
     }
     else if(sizePrice==="Large"){
-        sizePrice = 9,000;
+        sizePrice = 9000;
         if(crust==="crispy"){
             crustPrice = 600;
             if (toppings=== "pepperoni"){
@@ -259,19 +259,19 @@ function price(size,crust,toppings){
             }
         }
     }
-    var prices = (pizzaSize + pizzaCrust + pizzaToppings) * number;
+    var prices = (sizePrice + crustPrice + toppingsPrice) * number;
     console.log("prices: "+prices);
     totalPrice.push(prices);
     console.log(totalPrice);
-    for(var i=0;i<totalPrice.length;i++){
-        sumTotal+=totalPrice[i];
-        console.log("sum "+sumTotal);
-    }
-    return (pizzaSize + pizzaCrust + pizzaToppings) * number;
+    // for(var i=0;i<totalPrice.length;i++){
+    //     sumTotal+=totalPrice[i];
+    //     console.log("sum "+sumTotal);
+    // }
+    return (sizePrice + crustPrice + toppingsPrice) * number;
 }
 
 // User input Logic
-var pizzaSize,pizzaCrust,pizzaToppings,number;
+var sizePrice,crustPrice,toppingsPrice,number;
 $(document).ready(function(){
     $("#checkout").click(function(event){
         event.preventDefault();
@@ -286,9 +286,9 @@ $(document).ready(function(){
         var newOrder = new Orders(pizzaSize,pizzaCrust,pizzaToppings,number);
         console.log(newOrder);
         var prices = (pizzaSize + pizzaToppings + pizzaCrust) * number;
-        console.log(parseInt("prices: "+prices));
+        console.log("prices: "+prices);
         totalPrice.push(prices);
-        console.log(parseInt(totalPrice));
+        console.log(totalPrice);
     
 
         $("#delivery").append('<li><span>'+ newOrder.fullOrder() +'</span></li>');
