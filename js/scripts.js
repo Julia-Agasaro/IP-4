@@ -12,7 +12,8 @@ function resetInputs(){
     $("#number").val("");
 }
 Orders.prototype.fullOrder = function (){
-    return this.size + "," + this.crust + "," + this.toppings + "," + this.number ;
+    return this.size + ",and " + this.crust + ",with " + this.toppings + "," + this.number ;
+    
 }
 var sizePrice,crustPrice,toppingsPrice;
 var totalPrice = [];
@@ -244,10 +245,14 @@ var pizzaSize,pizzaToppings,pizzaCrust,number;
 $(document).ready(function(){
     $("#checkout").click(function(event){
         event.preventDefault();
-        prompt("would you want the pizza to be delivered to you or you are at the restaurant?")
+        var deliver = prompt("Deliver or You will Pick it Up")
+        if(deliver==="deliver"){
         prompt("Enter Your location")
         alert("your order will be delivered to your location");
-        alert("#price");
+        }else{
+            prompt("please indicate the time you will pickup your delivery");
+            
+        }
         pizzaSize = $("#size").val();
         console.log("size "+pizzaSize);
         pizzaCrust = $("#crust").val();
@@ -260,11 +265,13 @@ $(document).ready(function(){
         console.log(newOrder);
         
         console.log("prices: "+ price(pizzaSize,pizzaCrust,pizzaToppings));
+        alert("Here is the Price charged "+ price(pizzaSize,pizzaCrust,pizzaToppings));
+        alert("Thank you For choosing Us");
         // totalPrice.push(prices);
         // console.log(totalPrice);
     
 
-        $("#delivery").append('<li><span>'+ newOrder.fullOrder() +'</span></li>');
+        $("#delivery").append('<li><span>'+ "The Pizza You Ordered:" + newOrder.fullOrder() +'</span></li>');
         $("#prices").append('<li><span>'+ "cost: " + price(pizzaSize,pizzaCrust,pizzaToppings) + "Rwf" +'</span></li>');
         resetInputs();
         $("")
