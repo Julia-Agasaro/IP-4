@@ -244,6 +244,10 @@ var pizzaSize,pizzaToppings,pizzaCrust,number;
 $(document).ready(function(){
     $("#checkout").click(function(event){
         event.preventDefault();
+        prompt("would you want the pizza to be delivered to you or you are at the restaurant?")
+        prompt("Enter Your location")
+        alert("your order will be delivered to your location");
+        alert("#price");
         pizzaSize = $("#size").val();
         console.log("size "+pizzaSize);
         pizzaCrust = $("#crust").val();
