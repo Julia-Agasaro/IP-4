@@ -39,10 +39,9 @@ Orders.prototype.fullOrder = function (){
 }
 var sizePrice,crustPrice,toppingsPrice;
 var totalPrice = [];
-var sumTotal = 0;
-function price(sizePrice,crustPrice,toppingsPrice){ 
+function price(size,crust,toppings){ 
     if(size==="small"){
-        sizePrice = 4,000;
+        sizePrice = 4000;
         if(crust==="crispy"){
             crustPrice = 600;
             if (toppings=== "pepperoni"){
@@ -90,19 +89,19 @@ function price(sizePrice,crustPrice,toppingsPrice){
             else if(toppings==="extra-cheese" || toppings==="black-olives"){
                 toppingsPrice = 200;
             }
-            else if(toppings==="pineapple" || toppings==="spinach"){
+            else if(toppings==="Pineapple" || toppings==="Spinach"){
                 toppingsPrice = 200;
             }
         }
         else if(crust==="gluten-free"){
-            crustPrice=1,200;
+            crustPrice=1200;
             if (toppings==="pepperoni" || toppings==="mushrooms"){
                 toppingsPrice = 200;
             }
             else if(toppings==="onions"|| toppings==="greenpepper"){
                 toppingsPrice = 200;
             }
-            else if(toppings==="sausage" || toppings==="bacon"){
+            else if(toppings==="sausage" || toppings==="Bacon"){
                 toppingsPrice = 200;
             }
             else if(toppings==="extra-cheese" || toppings==="black-olives"){
@@ -171,7 +170,7 @@ function price(sizePrice,crustPrice,toppingsPrice){
             if (toppings==="pepperoni" || toppings==="mushrooms"){
                 toppingsPrice = 200;
             }
-            else if(toppings==="onions"|| toppings==="greenpepper"){
+            else if(toppings==="onions" || toppings==="greenpepper"){
                 toppingsPrice = 200;
             }
             else if(toppings==="sausage" || toppings==="bacon"){
@@ -240,7 +239,7 @@ function price(sizePrice,crustPrice,toppingsPrice){
             }
         }
         else if(crust==="gluten-free"){
-            crustPrice=1,200;
+            crustPrice=1200;
             if (toppings==="pepperoni" || toppings==="mushrooms"){
                 toppingsPrice = 200;
             }
@@ -253,7 +252,7 @@ function price(sizePrice,crustPrice,toppingsPrice){
             else if(toppings==="extra-cheese" || toppings==="black-olives"){
                 toppingsPrice = 200;
             }
-            else if(toppings==="pineapple" || toppings==="spinach"){
+            else if(toppings==="pineapple" || toppings==="pinach"){
                 toppingsPrice = 200;
             }
         }
@@ -269,23 +268,24 @@ function price(sizePrice,crustPrice,toppingsPrice){
     return (sizePrice + crustPrice + toppingsPrice) * number;
 }
 
+
 // User input Logic
-var number;
+var pizzaSize,pizzaToppings,pizzaCrust,number;
 $(document).ready(function(){
     $("#checkout").click(function(event){
         event.preventDefault();
         pizzaSize = $("#size").val();
-        console.log(pizzaSize);
+        console.log("size "+pizzaSize);
         pizzaCrust = $("#crust").val();
-        console.log(pizzaCrust);
+        console.log("crust "+pizzaCrust);
         pizzaToppings = $("#toppings").val();
-        console.log(pizzaToppings);
+        console.log("toppings "+pizzaToppings);
         number = $("#number").val();
-        console.log(number);
+        console.log("number "+number);
         var newOrder = new Orders(pizzaSize,pizzaCrust,pizzaToppings,number);
         console.log(newOrder);
         // va prices = (sizePrice + crustPrice + toppingsPrice) * number;
-        console.log("prices: "+ price(sizePrice,crustPrice,toppingsPrice));
+        console.log("prices: "+ price(pizzaSize,pizzaCrust,pizzaToppings));
         // totalPrice.push(prices);
         // console.log(totalPrice);
     
