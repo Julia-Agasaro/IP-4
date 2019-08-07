@@ -1,27 +1,4 @@
-// function order(size, crust,toppings,number) {
-//     this.pizzaSize = size;
-//     this.pizzaCrust = crust;
-//     this.pizzaToppings= toppings;
-//     this.pizzaNumber= number;
 
-//   }
-//   order.prototype.summary = function() {
-//     return this.pizzaSize + "," + this.pizzaCrust + "," + this.pizzaTopping + "," + this.pizzaNumber ;
-// };
-// $("form").submit(function(event) {
-//     var size = $('#size').val();
-//     var crust = $('#crust').val();
-//     var toppings = $('#topping').val();
-//     var number =$('#number').val();
-//     var newOrder = new placeOrder(size, crust, toppings ,number);
-//     var total = parseInt(size) + parseInt(crust) + parseInt(toppings);
-//     // alert(size);
-//     // alert(crust);
-//     // alert(toppings);
-//     alert(total);
-//     alert(newOrder.summary());
-//     event.preventDefault();
-// });
 var Orders = function(size,crust,toppings,number){
     this.size = size;
     this.crust = crust;
@@ -32,7 +9,7 @@ function resetInputs(){
     $("#size").val("");
     $("#crust").val("");
     $("#toppings").val("");
-    $("#num").val("");
+    $("#number").val("");
 }
 Orders.prototype.fullOrder = function (){
     return this.size + "," + this.crust + "," + this.toppings + "," + this.number ;
@@ -257,14 +234,7 @@ function price(size,crust,toppings){
             }
         }
     }
-    // var prices = (sizePrice + crustPrice + toppingsPrice) * number;
-    // console.log("prices: "+prices);
-    // totalPrice.push(prices);
-    // console.log(totalPrice);
-    // // for(var i=0;i<totalPrice.length;i++){
-    //     sumTotal+=totalPrice[i];
-    //     console.log("sum "+sumTotal);
-    // }
+    
     return (sizePrice + crustPrice + toppingsPrice) * number;
 }
 
@@ -284,14 +254,16 @@ $(document).ready(function(){
         console.log("number "+number);
         var newOrder = new Orders(pizzaSize,pizzaCrust,pizzaToppings,number);
         console.log(newOrder);
-        // va prices = (sizePrice + crustPrice + toppingsPrice) * number;
+        
         console.log("prices: "+ price(pizzaSize,pizzaCrust,pizzaToppings));
         // totalPrice.push(prices);
         // console.log(totalPrice);
     
 
         $("#delivery").append('<li><span>'+ newOrder.fullOrder() +'</span></li>');
+        $("#prices").append('<li><span>'+ "cost: " + price(pizzaSize,pizzaCrust,pizzaToppings) + "Rwf" +'</span></li>');
         resetInputs();
+        $("")
     });
 });
     
