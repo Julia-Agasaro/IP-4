@@ -17,6 +17,7 @@ Orders.prototype.fullOrder = function (){
 }
 var sizePrice,crustPrice,toppingsPrice;
 var totalPrice = [];
+var sumTotal= 0;
 function price(size,crust,toppings){ 
     if(size==="small"){
         sizePrice = 4000;
@@ -235,6 +236,15 @@ function price(size,crust,toppings){
             }
         }
     }
+    // var pricing = (sizePrice + crustPrice + toppingsPrice) * number;
+    // totalPrice.push(pricing);
+    // console.log("total: "+totalPrice);
+    // if(totalPrice.length>0){
+    //     for(var i=0;i<totalPrice.length;i++){
+    //         sumTotal+=totalPrice[i];
+    //         // console.log("sum "+sumTotal);
+    //     }
+    // }
     
     return (sizePrice + crustPrice + toppingsPrice) * number;
 }
@@ -248,11 +258,13 @@ $(document).ready(function(){
         var deliver = prompt("Deliver or You will Pick it Up")
         if(deliver==="deliver"){
         prompt("Enter Your location")
-        alert("your order will be delivered to your location");
-        }else{
-            prompt("please indicate the time you will pickup your delivery");
-            
+        alert("Your order will be delivered to your location");
         }
+        else{
+            prompt("please indicate the time you will pickup your delivery");
+            // alert("thank you!!");   
+        }
+        
         pizzaSize = $("#size").val();
         console.log("size "+pizzaSize);
         pizzaCrust = $("#crust").val();
@@ -265,16 +277,20 @@ $(document).ready(function(){
         console.log(newOrder);
         
         console.log("prices: "+ price(pizzaSize,pizzaCrust,pizzaToppings));
-        alert("Here is the Price charged "+ price(pizzaSize,pizzaCrust,pizzaToppings));
+        alert("Here is the Price charged "+ price(pizzaSize,pizzaCrust,pizzaToppings)) +"Rwf";
+        // var p=parseInt(sizePrice)+(crustPrice)+(toppingsPrice)*parseInt(number)
+        // console.log(p)
+        // alert('Total is' + p);
         alert("Thank you For choosing Us");
         // totalPrice.push(prices);
         // console.log(totalPrice);
     
 
-        $("#delivery").append('<li><span>'+ "The Pizza You Ordered:" + newOrder.fullOrder() +'</span></li>');
-        $("#prices").append('<li><span>'+ "cost: " + price(pizzaSize,pizzaCrust,pizzaToppings) + "Rwf" +'</span></li>');
+        $("#list").append("<li><span>"+ "The Pizza You Ordered:" + newOrder.fullOrder() +"</span></li>");
+        $("#prices").append("<li><span>"+ "cost: " + price(pizzaSize,pizzaCrust,pizzaToppings) + "Rwf" +"</span></li>");
+        // $("#total").append("<li><span>"+ " Total cost: " + sumTotal + "Rwf" +"</span></li>");
         resetInputs();
-        $("")
+        // $("")
     });
 });
     

@@ -107,3 +107,19 @@ ul li a{
       right:80%;
       /* border: 3px solid black */
   }
+#order{
+    padding: 20px 50px 20px 50px;
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: #000;
+}
+.order-overlay {
+    height: inherit;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+}
+.checkout {
+    border-radius: 20px;
+    margin-top: 20px;
+    color: #fff;
+}
